@@ -9,7 +9,7 @@ import { Component, ContentChild, ElementRef } from '@angular/core';
 export class Demo {
 @ContentChild('contentRef') contentData!:ElementRef;
 
+  data=""
   ngAfterContentInit(){
-    console.log(this.contentData);
-  }
+  this.data=this.contentData.nativeElement.textContent;  }
 }

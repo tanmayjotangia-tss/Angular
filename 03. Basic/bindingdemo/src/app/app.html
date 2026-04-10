@@ -1,0 +1,41 @@
+<h1>{{ companyName}}</h1>
+
+<div [hidden]="data">
+  <p>Hidden Data</p>
+</div>
+
+<div>
+  <input type="text" placeholder="Enter text" (input)="changeData($event)">
+  <p>{{ value }}</p>
+</div>
+
+<div *ngIf="value=='';else elseBlock">
+  <h3>Rahul</h3>
+</div>
+
+<ng-template #elseBlock>
+  <h3>Tanmay</h3>
+</ng-template>
+
+
+<div *ngFor="let element of [1,2,3,4,5,6,7,8,9,10]">
+  <div *ngIf="element % 2 == 0; else oddBlock">
+    Even: {{ element }}
+  </div>
+  <ng-template #oddBlock>
+    Odd: {{ element }}
+  </ng-template>
+</div>
+
+
+<div [ngClass]="{textColor: true}" *ngIf="value==''">
+<p>NG Class </p>
+</div>
+
+<div [ngStyle]="{'background-color': 'red'}" *ngIf="value==''">
+<p>NG Style </p>
+</div>
+
+<div [ngStyle]="{'background-color': value==''?'red':'green'}">
+  <p>Ternary Operator</p>
+</div>

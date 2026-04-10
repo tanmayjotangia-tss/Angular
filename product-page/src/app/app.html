@@ -1,0 +1,28 @@
+  <h1>Products</h1>
+  
+  <div class="container">
+    <div class="card" 
+    *ngFor="let product of products"
+    [ngClass]="{'available-card':product.available === 'Available',
+      'not-available-card':product.available !=='Available'
+    }">
+
+      <img [src]="product.image" alt="{{product.name}}">
+      <div class="title">{{product.name}}</div>
+      <div>{{product.color}}</div>
+      <div class="price">{{product.price}}</div>
+
+      <div [ngClass]="{'available':product.available==='Available',
+        'not-available':product.available!=='Available'
+      }">{{product.available}}</div>
+
+      <div *ngIf="product.available==='Available'">
+         <button class="buy" (click) ="buy(product)">Buy</button>
+         <button class="details" (click) = "viewDetail(product)">Details</button>
+      </div>
+
+      <div *ngIf="product.available !=='Available'">
+        <button class="notify" (click) = "notify(product)">Notify</button>
+      </div>
+    </div>
+  </div>

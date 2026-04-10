@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #ffffff;
+  width: 220px;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 8px; 
+  text-align: center;
+}
+
+.available-card {
+  background-color: #d4edda;
+}
+
+.not-available-card {
+  background-color: #f8d7da;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.available {
+  color: green;
+  font-weight: bold;
+}
+
+.not-available {
+  color: red;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 10px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.buy {
+  background-color: blue;
+  color: white;
+}
+
+.details {
+  background-color: gray;
+  color: white;
+}
+
+.notify {
+  background-color: orange;
+  color: white;
+}

@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { SetBackground } from './decorator/set-background';
+import { Highlight } from './decorator/highlight';
 
 @NgModule({
   declarations: [
     App,
-    SetBackground
+    SetBackground,
+    Highlight
   ],
   imports: [
     BrowserModule,

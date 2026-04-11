@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { SetBackground } from './decorator/set-background';
 import { Highlight } from './decorator/highlight';
+import { HostListenerBinding } from './decorator/host-listner-binding';
 
 @NgModule({
   declarations: [
     App,
     SetBackground,
-    Highlight
+    Highlight,
+    HostListenerBinding
   ],
   imports: [
     BrowserModule,

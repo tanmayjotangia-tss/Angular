@@ -21,4 +21,8 @@ export class Child {
   ngDoCheck(){
     console.log("Child Component ngDoCheck", this.comingData);
   }
+
+  ngOnChanges(){
+    console.log("Child Component ngOnChanges", this.comingData);
+  }
 }

@@ -7,5 +7,6 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
+  backgroundColor = 'lightgreen';
   protected readonly title = signal('customDecoratorDemo');
 }

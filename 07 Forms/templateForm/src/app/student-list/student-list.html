@@ -1,0 +1,11 @@
+<h2>Student List</h2>
+
+<div *ngFor="let student of students; let i = index">
+  <p>#{{ i + 1 }}</p>
+  <p>Name: {{ student.name }}</p>
+  <p>Email: {{ student.email }}</p>
+  <p>Country: {{ student.country }}</p>
+  <p>Gender: {{ student.gender }}</p>
+  <p>Hobbies: {{ student.hobbies.join(', ') }}</p>
+  <hr>
+</div>

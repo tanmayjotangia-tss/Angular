@@ -1,47 +1,7 @@
-<div>
-  <h1>Template Driven Forms</h1>
-  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
-    <label for="name" >Name:</label>
-    <input type="text" name="name" ngModel placeholder="Enter your name">
-    <br>
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" ngModel placeholder="Enter your email">
-    <br>
-    <br>
-    <label for="country">Country</label>
-    <select id="country" name="country" ngModel>
-      <option value="">Select a country</option>
-      <option value="us">United States</option>
-      <option value="ca">Canada</option>
-      <option value="uk">United Kingdom</option>
-    </select>
-    <br>
-    <br>
-      <label>Gender:</label>
-      <div *ngFor="let gender of genders; let i = index">
-        <input 
-          type="radio"
-          [id]="'gender-' + i"
-          name="gender"
-          [value]="gender"
-          [(ngModel)]="genderSelected"
-        >
-        <label [for]="'gender-' + i">{{ gender }}</label>
-      </div>
-    <br>
-    <br>
-    <label>Hobbies:</label>
-    <div *ngFor="let hobby of ['Reading','Traveling','Cooking','Sports']">
-      <input 
-        type="checkbox"
-        [value]="hobby"
-        (change)="onHobbyChange($event)"
-      >
-      {{ hobby }}
-    </div>
-    <br>
-    <br>
-    <button type="submit" >Submit</button>
-  </form>
-</div>
+<h1>Student Management</h1>
+
+<app-student-form (studentAdded)="addStudent($event)"></app-student-form>
+  
+<hr>
+
+<app-student-list [students]="students"></app-student-list>

@@ -31,11 +31,15 @@
       </div>
     <br>
     <br>
-    <label for="hobbies">Hobbies:</label>
-    <input type="checkbox" name="hobbies" ngModel value="Reading"> Reading
-    <input type="checkbox" name="hobbies" ngModel value="Traveling"> Traveling
-    <input type="checkbox" name="hobbies" ngModel value="Cooking"> Cooking
-    <input type="checkbox" name="hobbies" ngModel value="Sports"> Sports
+    <label>Hobbies:</label>
+    <div *ngFor="let hobby of ['Reading','Traveling','Cooking','Sports']">
+      <input 
+        type="checkbox"
+        [value]="hobby"
+        (change)="onHobbyChange($event)"
+      >
+      {{ hobby }}
+    </div>
     <br>
     <br>
     <button type="submit" >Submit</button>

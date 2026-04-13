@@ -8,8 +8,17 @@ import { NgForm } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('templateForm');
+  name:string = '';
+  email:string = '';
+  country:string = '';
+genders: string[] = ["Male", "Female"];
+genderSelected: string = '';
   onSubmit(form: NgForm) {
-    console.log(form);
+    this.name = form.value.name;
+    this.email = form.value.email;
+    this.country = form.value.country;
+    this.genderSelected = form.value.gender;
+
+    console.log('Form submitted with values:', form.value);
   }
 }

@@ -1,0 +1,8 @@
+<h1>Life Cycle Hook Demo Part 2</h1>
+
+<div>
+  <button (click)="toggleChild()">Toggle Child</button>
+</div>
+<app-child *ngIf="!hidden">
+  <h1>Content from App Component</h1>
+</app-child>

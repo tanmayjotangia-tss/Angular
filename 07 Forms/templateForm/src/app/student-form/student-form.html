@@ -39,14 +39,14 @@
   <br>
 
   <label>Hobbies:</label>
-  <div *ngFor="let hobby of hobbyList">
-    <input 
-      type="checkbox"
-      [value]="hobby"
-      (change)="onHobbyChange($event)"
-    >
-    {{ hobby }}
-  </div>
+<div *ngFor="let hobby of hobbyList">
+  <input 
+    type="checkbox"
+    [(ngModel)]="hobby.checked"
+    name="hobby-{{hobby.name}}"
+  >
+  {{ hobby.name }}
+</div>
 
   <br>
 

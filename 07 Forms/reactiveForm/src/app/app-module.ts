@@ -1,0 +1,24 @@
+import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing-module';
+import { App } from './app';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    App
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+    provideBrowserGlobalErrorListeners(),
+    provideZonelessChangeDetection()
+  ],
+  bootstrap: [App]
+})
+export class AppModule { }

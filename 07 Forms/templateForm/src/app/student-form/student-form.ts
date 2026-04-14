@@ -14,8 +14,13 @@ export class StudentForm {
   genders: string[] = ['Male', 'Female'];
   hobbies: string[] = [];
 
-  hobbyList = ['Reading', 'Traveling', 'Cooking', 'Sports'];
-
+  hobbyList = [
+    { name: 'Reading', checked: false },
+    { name: 'Traveling', checked: false },
+    { name: 'Cooking', checked: false },
+    { name: 'Sports', checked: false }
+  ];
+  
   onHobbyChange(event: any) {
     const value = event.target.value;
 
@@ -25,17 +30,22 @@ export class StudentForm {
   }
 
   onSubmit(form: NgForm) {
+    const selectedHobbies = this.hobbyList
+      .filter(h => h.checked)
+      .map(h => h.name);
+
     const student: Student = {
       name: form.value.name,
       email: form.value.email,
       country: form.value.country,
       gender: form.value.gender,
-      hobbies: [...this.hobbies]
+      hobbies: selectedHobbies
     };
 
     this.studentAdded.emit(student);
 
     form.reset();
-    this.hobbies = [];
+
+    this.hobbyList.forEach(h => h.checked = false);
   }
 }

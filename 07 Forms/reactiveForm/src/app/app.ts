@@ -74,12 +74,6 @@ export class App {
       country: null,
       gender: null,
     });
-
-    const hobbiesArray = this.studentForm.get('hobbies') as FormArray;
-    hobbiesArray.clear();
-
-    this.hobbyList.forEach(() => {
-      hobbiesArray.push(new FormControl(false));
-    });
+    
   }
 }

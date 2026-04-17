@@ -1,0 +1,12 @@
+.container{
+    width: 100%;
+    text-align: center;
+    background-color: antiquewhite;
+    height: 50px;
+}
+
+.navbar{
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}

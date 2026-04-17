@@ -1,0 +1,15 @@
+ Student Name : {{student.name}}
+<br><br>
+Student Name (Lower Case): {{student.name | lowercase}}
+<br><br>
+Student Name (Upper Case): {{student.name | uppercase}}
+<br><br>
+Student D.O.B : {{student.dob | date:"full"}}
+<br><br>
+Student Fees : {{student.fees | currency:'INR'}}
+<br><br>
+Student Name (Custom Pipe): {{student.name | customPipe}}
+<br><br>
+Student Name (Custom Pipe and UpperCase): {{student.name | customPipe | uppercase}}
+<br><br>
+Student Name (UpperCase and Custom Pipe): {{student.name | uppercase | customPipe }}

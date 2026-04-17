@@ -1,6 +1,8 @@
 <div>
-    <input type="text" placeholder="Enter name" #inputRef>
-</div>
+  <mat-form-field class="input-field">
+    <mat-label>Bank Name</mat-label>
+    <input matInput placeholder="Enter bank name:" #inputRef>
+  </mat-form-field></div>
 <div>
-    <button (click)="sendName()">Send Data</button>
+    <button matButton="filled" (click)="sendName()">Send Data</button>
 </div>

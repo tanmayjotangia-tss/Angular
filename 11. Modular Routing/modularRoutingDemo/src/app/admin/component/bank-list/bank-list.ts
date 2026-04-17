@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './bank-list.css',
 })
 export class BankList {
-
+  bankName=""
+  ngOnInit(){
+    this.bankName=localStorage.getItem('bankName')!
+  }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataSharedService } from '../../../shared/service/data-shared-service';
 
 @Component({
   selector: 'app-bank-list',
@@ -7,8 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './bank-list.css',
 })
 export class BankList {
+  constructor(private dataSharedService:DataSharedService){}
   bankName=""
   ngOnInit(){
-    this.bankName=localStorage.getItem('bankName')!
+    // this.bankName=localStorage.getItem('bankName')!
+    this.dataSharedService.myName.subscribe(name => {this.bankName=name})
   }
 }

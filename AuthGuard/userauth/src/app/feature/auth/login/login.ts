@@ -22,13 +22,13 @@ export class Login {
 
 
   doLogin(){
-    this.authService.register(this.loginForm.value).subscribe({
+    this.authService.login(this.loginForm.value).subscribe({
       next:()=>{
-        alert("Registration Successful")
+        alert("Login Successful")
         
       },
       error:()=>{
-        alert("Registration Failed")
+        alert("Login Failed")
       }
     })
   }

@@ -7,9 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private registerUrl="http://localhost:8080/auth/register"
+  private loginUrl="http://localhost:8080/auth/login"
+  private baseUrl="http://localhost:8080/auth"
   constructor(private http:HttpClient){}
 
   register(data:any):Observable<any>{
-    return this.http.post<any>(this.registerUrl,data)
+    return this.http.post<any>(`${this.baseUrl}/login`,data)
+  }
+
+  login(data:any):Observable<any>{
+    return this.http.post<any>(`${this.baseUrl}/login`,data)
   }
 }

@@ -18,4 +18,8 @@ export class AuthService {
   login(data:any):Observable<any>{
     return this.http.post<any>(`${this.baseUrl}/login`,data)
   }
+
+  saveToken(token:any){
+      localStorage.setItem("token",token)
+  }
 }

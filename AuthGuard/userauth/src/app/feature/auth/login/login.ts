@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../core/services/auth-service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class Login {
 
-  constructor(private fb:FormBuilder,private authService:AuthService){}
+  constructor(private fb:FormBuilder,private authService:AuthService, private route:Router){}
 
   loginForm!:FormGroup
     ngOnInit(){
@@ -23,9 +24,11 @@ export class Login {
 
   doLogin(){
     this.authService.login(this.loginForm.value).subscribe({
-      next:()=>{
+      next:(response:any)=>{
         alert("Login Successful")
-        
+        console.log(response.accessToken);
+        this.authService.saveToken(response.accessToken)
+        this.route.navigate(['/admin'])
       },
       error:()=>{
         alert("Login Failed")

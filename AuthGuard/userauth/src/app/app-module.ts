@@ -7,12 +7,16 @@ import { Registration } from './feature/auth/registration/registration';
 import { HttpClientModule } from '@angular/common/http';
 import { Login } from './feature/auth/login/login';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminDashboard } from './feature/admin/admin-dashboard/admin-dashboard';
+import { UserDashboard } from './feature/users/user-dashboard/user-dashboard';
 
 @NgModule({
   declarations: [
     App,
     Registration,
-    Login
+    Login,
+    AdminDashboard,
+    UserDashboard
   ],
   imports: [
     BrowserModule,

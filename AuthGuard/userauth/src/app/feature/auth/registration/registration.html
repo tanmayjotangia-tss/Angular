@@ -3,13 +3,13 @@
     
     <form [formGroup]="registrationForm" (ngSubmit) = "doRegistration()">
         <div>
-            Username:<input type="text" placeholder="Enter Username" formControlName="userName">
+            Username:<input type="text" placeholder="Enter Username" formControlName="username">
         </div>
         <div>
             Password:<input type="password" placeholder="Enter Password" formControlName="password">
         </div>
         <div>
-            Role:<input type="text" placeholder="Enter Role" formControlName="role">
+            Role:<input type="text" placeholder="Enter Role" formControlName="roleName">
         </div>
         <div>
             <button type="submit">Register</button>

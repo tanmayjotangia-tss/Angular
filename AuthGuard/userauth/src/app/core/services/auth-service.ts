@@ -37,4 +37,11 @@ export class AuthService {
     console.log(role);
     return role;
   }
+
+  isLoggedIn():boolean{
+    if(this.getToken()){
+      return true
+    }
+    return false
+  }
 }

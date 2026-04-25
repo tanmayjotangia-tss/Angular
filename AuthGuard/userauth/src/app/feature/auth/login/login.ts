@@ -28,7 +28,13 @@ export class Login {
         alert("Login Successful")
         console.log(response.accessToken);
         this.authService.saveToken(response.accessToken)
-        this.route.navigate(['/admin'])
+        // this.route.navigate(['/admin'])
+        const role = this.authService.getUserRole()
+        if(role == "ROLE_USER"){
+          this.route.navigate(['/user'])
+        }else{
+          this.route.navigate(['/admin'])
+        }
       },
       error:()=>{
         alert("Login Failed")
